@@ -62,8 +62,7 @@ namespace cw4.Controllers
                     student.FirstName = sqlDataReader["FirstName"].ToString();
                     student.LastName = sqlDataReader["LastName"].ToString();
                     student.BirthDate = sqlDataReader["BirthDate"].ToString();
-                    student.CourseName = sqlDataReader["Name"].ToString();
-                    student.Semester = Int32.Parse(sqlDataReader["Semester"].ToString());
+
                    
                     list.Add(student);
                 }
@@ -103,8 +102,7 @@ namespace cw4.Controllers
                     student.FirstName = sqlDataReader["FirstName"].ToString();
                     student.LastName = sqlDataReader["LastName"].ToString();
                     student.BirthDate = sqlDataReader["BirthDate"].ToString();
-                    student.CourseName = sqlDataReader["Name"].ToString();
-                    student.Semester = Int32.Parse(sqlDataReader["Semester"].ToString());
+
 
 
 

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "/Users/karol/APBD/cw5/cw3/cw4.csproj": {}
+    "/Users/karol/APBD/cw5/cw3/cw5.csproj": {}
   },
   "projects": {
-    "/Users/karol/APBD/cw5/cw3/cw4.csproj": {
+    "/Users/karol/APBD/cw5/cw3/cw5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
-        "projectName": "cw4",
-        "projectPath": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
+        "projectUniqueName": "/Users/karol/APBD/cw5/cw3/cw5.csproj",
+        "projectName": "cw5",
+        "projectPath": "/Users/karol/APBD/cw5/cw3/cw5.csproj",
         "packagesPath": "/Users/karol/.nuget/packages/",
         "outputPath": "/Users/karol/APBD/cw5/cw3/obj/",
         "projectStyle": "PackageReference",

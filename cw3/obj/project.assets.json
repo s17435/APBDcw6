@@ -459,11 +459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/karol/APBD/cw4/cw3/cw4.csproj",
+      "projectUniqueName": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
       "projectName": "cw4",
-      "projectPath": "/Users/karol/APBD/cw4/cw3/cw4.csproj",
+      "projectPath": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
       "packagesPath": "/Users/karol/.nuget/packages/",
-      "outputPath": "/Users/karol/APBD/cw4/cw3/obj/",
+      "outputPath": "/Users/karol/APBD/cw5/cw3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/karol/.config/NuGet/NuGet.Config"
@@ -511,7 +511,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
       }
     }
   }

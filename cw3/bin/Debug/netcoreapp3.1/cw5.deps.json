@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "cw4/1.0.0": {
+      "cw5/1.0.0": {
         "dependencies": {
           "System.Data.SqlClient": "4.8.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -309,10 +309,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "cw4.dll": {}
+          "cw5.dll": {}
         },
         "compile": {
-          "cw4.dll": {}
+          "cw5.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -2088,7 +2088,7 @@
     }
   },
   "libraries": {
-    "cw4/1.0.0": {
+    "cw5/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
