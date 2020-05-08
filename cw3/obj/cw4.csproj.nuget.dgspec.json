@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/karol/APBD/cw5/cw3/cw4.csproj": {}
+    "/Users/karol/APBD/APBDcw6/cw3/cw4.csproj": {}
   },
   "projects": {
-    "/Users/karol/APBD/cw5/cw3/cw4.csproj": {
+    "/Users/karol/APBD/APBDcw6/cw3/cw4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
+        "projectUniqueName": "/Users/karol/APBD/APBDcw6/cw3/cw4.csproj",
         "projectName": "cw4",
-        "projectPath": "/Users/karol/APBD/cw5/cw3/cw4.csproj",
+        "projectPath": "/Users/karol/APBD/APBDcw6/cw3/cw4.csproj",
         "packagesPath": "/Users/karol/.nuget/packages/",
-        "outputPath": "/Users/karol/APBD/cw5/cw3/obj/",
+        "outputPath": "/Users/karol/APBD/APBDcw6/cw3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/karol/.config/NuGet/NuGet.Config"

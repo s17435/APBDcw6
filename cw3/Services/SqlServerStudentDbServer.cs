@@ -35,7 +35,7 @@ namespace cw4.Services
 
                     try
                     {
-                        Console.WriteLine(request.Studies);
+                        
                         // Sprawdzenie czy studia istnieją
                         com.CommandText = "SELECT IdStudy from studies where name = @name";
                         com.Parameters.AddWithValue("name", request.Studies);
@@ -159,16 +159,7 @@ namespace cw4.Services
 
 
                     }
-
-
-
-
-
-
-
-
-
-
+                    
                 }
             }
 
@@ -236,5 +227,44 @@ namespace cw4.Services
 
             return response;
     }
+
+    public Student GetStudent(string index)
+    {
+       Console.WriteLine("Jestem w metodzie GEtStudent");
+        using (var con = new SqlConnection(ConString))
+        {
+            using (var com = new SqlCommand())
+            {
+                com.Connection = con;
+                con.Open();
+
+                var transaction = con.BeginTransaction();
+                com.Transaction = transaction;
+                
+                com.CommandText = "SELECT * from student where IndexNumber = @index";
+                com.Parameters.AddWithValue("index", index);
+
+                var dr = com.ExecuteReader();
+
+                if (!dr.Read())
+                {
+                    Console.WriteLine("nie ma");
+                    dr.Close();
+                    return null;
+                }
+                var std = new Student();
+                std.IndexNumber = (string) dr["IndexNumber"];
+                std.FirstName = (string) dr["FirstName"];
+                std.LastName = (string) dr["LastName"];
+                std.BirthDate = (DateTime) dr["BirthDate"];
+                std.IdEnrollment = (int) dr["IdEnrollment"];
+                Console.WriteLine(std.FirstName);
+                dr.Close();
+
+                return std;
+            }
+        }
+    }
+    
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using cw4.DAL;
+using cw4.Middlewares;
 using cw4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -28,21 +30,50 @@ namespace cw4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IDbService, MockDbService>();
+
             services.AddTransient<IStudentDBService, SqlServerStudentDbServer>();
             services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IStudentDBService studentDbService)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
+            // app.UseWhen(context => context.Request.Path.ToString().Contains("secret"), app =>
+            // {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-            //app.UseHttpsRedirection();
 
-            app.UseRouting();
+
+            app.UseMiddleware<LoggingMiddleware>();
+                app.Use(async (context, next) =>
+                {
+                    if (!context.Request.Headers.ContainsKey("Index"))
+                    {
+                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        await context.Response.WriteAsync("Student not found :(");
+                        return;
+                    }
+
+                    string index = context.Request.Headers["Index"].ToString();
+                    var student = studentDbService.GetStudent(index);
+                    Console.WriteLine(student.FirstName);
+                    if (student == null)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status404NotFound;
+                        await context.Response.WriteAsync("Musisz podać prawidłowy numer indeksu");
+                        return;
+                    }
+
+
+                    await next();
+                });
+          //  });
+        
+
+        app.UseRouting();
 
             app.UseAuthorization();
 
@@ -50,6 +81,7 @@ namespace cw4
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }

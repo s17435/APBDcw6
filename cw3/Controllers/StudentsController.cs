@@ -61,7 +61,7 @@ namespace cw4.Controllers
 
                     student.FirstName = sqlDataReader["FirstName"].ToString();
                     student.LastName = sqlDataReader["LastName"].ToString();
-                    student.BirthDate = sqlDataReader["BirthDate"].ToString();
+                    student.BirthDate = (DateTime) sqlDataReader["BirthDate"];
 
                    
                     list.Add(student);
@@ -101,7 +101,7 @@ namespace cw4.Controllers
 
                     student.FirstName = sqlDataReader["FirstName"].ToString();
                     student.LastName = sqlDataReader["LastName"].ToString();
-                    student.BirthDate = sqlDataReader["BirthDate"].ToString();
+                    student.BirthDate = (DateTime)sqlDataReader["BirthDate"];
 
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using cw4.DTOs.Responses;
+using cw4.Models;
 
 namespace cw4.Services
 {
@@ -11,6 +12,8 @@ namespace cw4.Services
     {
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest request);
         PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest request);
+
+        Student GetStudent(string index);
 
     }
 }
